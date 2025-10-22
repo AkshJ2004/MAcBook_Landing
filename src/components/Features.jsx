@@ -27,8 +27,6 @@ const  ModelScroll = () => {
         crossOrigin: 'anonymous',
       });
       v.load()
-
-       
     });
   }, []);
 
