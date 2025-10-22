@@ -1,6 +1,6 @@
 import React from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
-import { Color,SRGBColorSpace } from 'three';
+import { SRGBColorSpace } from 'three';
 import { Color} from 'three';
 
 
