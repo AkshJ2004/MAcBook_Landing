@@ -6,7 +6,7 @@ import MacbookModel14 from './models/Macbook-14.jsx';
 
 
 import StudioLights from "./three/StudioLights.jsx";
-import ModelSwitcher from "./three/ModelSwitcher";
+import ModelSwitcher from "./three/ModelSwitcher.jsx";
 import { useMediaQuery } from "react-responsive";
 
 const ProductViewer = () => {
@@ -19,7 +19,7 @@ const ProductViewer = () => {
         <h2>Take a closer look</h2>
 
         <div className="controls">
-            <p className="info"> Macbook Pro | Available in 14" & 16" in Space Grey & Dark colors</p>
+            {/*<p className="info"> Macbook Pro | Available in 14" & 16" in Space Grey & Dark colors</p>*/}
 
             <div className="flex-center gap-5 mt-5">
                 <div className="color-control">
@@ -49,7 +49,7 @@ const ProductViewer = () => {
                 </div>
             </div>
         </div>
-        <p className="text-white text-4xl">Render Canvas</p>
+    
         <Canvas id="canvas" camera={{position:[0,2,5], fov:50, near:0.1, far:100}}>
             <StudioLights />
             

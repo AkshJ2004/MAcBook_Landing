@@ -18,9 +18,9 @@ const Showcase = () => {
             });
             timeline.to('.mask img',{
                 transform : 'scale(1.1)',
-            }).to('.content',{opacity: 1, y: 0,ease:'power1.in'})
+            }).to('.content',{opacity: 1, y: 0,ease:'power1.in'});
         }
-    }, [isTablet]);
+    }, [isTablet])
 
 
   return (
@@ -37,7 +37,7 @@ const Showcase = () => {
                     <h2>Rocket Chip</h2>
 
                     <div className="space-y-5 mt-7 pe-10">
-                        <p>Introducing {""}
+                        <p>Introducing {" "}
                             <span className="text-white">
                             M4, the next generation of Apple silicon
                             </span>

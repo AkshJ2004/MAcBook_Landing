@@ -1,7 +1,7 @@
 import { PresentationControls } from "@react-three/drei";
 import  { useRef } from "react";
-import MacbookModel14 from "../models/Macbook-14";
-import MacbookModel16 from "../models/Macbook-16";
+import MacbookModel14 from "../models/Macbook-14.jsx";
+import MacbookModel16 from "../models/Macbook-16.jsx";
 import  gsap  from 'gsap';
 import {useGSAP} from "@gsap/react";
 
@@ -14,14 +14,14 @@ const fadeMeshes = (group,opacity) => {
     group.traverse((child) => {
         if(child.isMesh){
             child.material.transparent = true;
-            gsap.to(child.material, {opacity, duration: ANIMATION_DURATION});
+            gsap.to(child.material, {opacity, duration: ANIMATION_DURATION})
         }
     });  
 }     
 
 const moveGroup = (group, x) => {
     if(!group) return;
-    gsap.to(group.position, {x, duration: ANIMATION_DURATION});
+    gsap.to(group.position, {x, duration: ANIMATION_DURATION})
 }
 
 
@@ -37,14 +37,14 @@ const ModelSwitcher = ({scale,isMobile}) => {
 
         useGSAP(() => {
             if(showLargeMacbook){
-                moveGroup(smallMacbookRef.current, 0);
-                moveGroup(largeMacbookRef.current, -OFFSET_DISTANCE);
+                moveGroup(smallMacbookRef.current, -OFFSET_DISTANCE);
+                moveGroup(largeMacbookRef.current, 0);
 
                 fadeMeshes(smallMacbookRef.current, 0);
                 fadeMeshes(largeMacbookRef.current, 1);
             } else {
                 moveGroup(smallMacbookRef.current, 0);
-                moveGroup(largeMacbookRef.current, -OFFSET_DISTANCE);
+                moveGroup(largeMacbookRef.current, OFFSET_DISTANCE);
 
                 fadeMeshes(smallMacbookRef.current, 1);
                 fadeMeshes(largeMacbookRef.current, 0);
@@ -74,9 +74,7 @@ const ModelSwitcher = ({scale,isMobile}) => {
             <MacbookModel14 scale={isMobile ?  0.03 : 0.06} />
         </group>
     </PresentationControls>
-
     </>
-    
   )
 }
 
