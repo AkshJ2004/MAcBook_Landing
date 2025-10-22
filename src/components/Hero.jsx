@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 
 const Hero = () => {
 
-    const videoRef = useRef(null);
+    const videoRef = useRef();
 
-    useEffect
+      useEffect(() => {
+        if(videoRef.current) videoRef.current.playbackRate = 2;
+    }, []);
   return (
     <section id ="hero">
         <div>

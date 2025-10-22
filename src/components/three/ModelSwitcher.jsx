@@ -3,6 +3,8 @@ import  { useRef } from "react";
 import MacbookModel14 from "../models/Macbook-14";
 import MacbookModel16 from "../models/Macbook-16";
 import  gsap  from 'gsap';
+import {useGSAP} from "@gsap/react";
+
 
 const ANIMATION_DURATION = 1;
 const OFFSET_DISTANCE = 5;

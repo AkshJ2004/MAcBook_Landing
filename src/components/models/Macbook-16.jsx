@@ -1,8 +1,9 @@
-import React from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { SRGBColorSpace } from 'three';
 import { Color} from 'three';
-
+import useMacbookStore from "../../store/index.js";
+import {noChangeParts} from "../../constants/index.js";
+import React, {useEffect} from 'react'
 
 export  default function MacbookModel16(props) {
   const { nodes, materials,scene } = useGLTF('/models/macbook-16-transformed.glb')

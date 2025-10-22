@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber";
-import StudioLights from "./StudioLights";
+import StudioLights from "./three/StudioLights.jsx";
 import { features, featureSequence } from "../constants/index";
 import clsx from "clsx";
-import { Suspense } from "react";
+import { Suspense,useEffect,useRef } from "react";
 import MacbookModel from "./models/Macbook.jsx";
-import { HTML } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import useMacbookStore from "../store/index.js";
 import { useGSAP } from "@gsap/react";
@@ -77,7 +77,7 @@ const  ModelScroll = () => {
 
   return (
     <group ref={groupRef}>
-      <Suspense fallback={<HTML><h1 className="text-white text-3xl uppercase">Loading...</h1></HTML>}>
+      <Suspense fallback={<Html><h1 className="text-white text-3xl uppercase">Loading...</h1></Html>}>
         <MacbookModel scale={isMobile ? 0.05 : 0.08} position={[0, -1, 0]} />
       </Suspense>
     </group>
@@ -95,7 +95,13 @@ const Features = () => {
       </Canvas>
       <div className="absolute inset-0">
         {features.map((feature,index) => (
-           <div className={clsx('box',`box${index + 1}`, feature.style)}>{feature.text}</div>
+           <div key={feature.id} className={clsx('box', `box${index + 1}`, feature.styles)}>
+            <img src={feature.icon} alt={feature.highlight} />
+            <p>
+              <span className="text-white">{feature.highlight}</span>
+              {feature.text}
+            </p>
+           </div>
         ))}
 
       </div>
