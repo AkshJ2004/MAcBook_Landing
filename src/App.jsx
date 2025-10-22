@@ -15,6 +15,10 @@ const app = () => {
       <Hero />
       <ProductViewer />
       <Showcase />
+      <Performance />
+      <Features />
+      <Highlights />
+      <Footer />
      </main>
   )
 }
