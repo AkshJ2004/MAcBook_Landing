@@ -35,13 +35,13 @@ const ProductViewer = () => {
                 
                 <div className="size-control">
                     <div 
-                        onClick={() => setColor(0.06)} 
+                        onClick={() => setScale(0.06)} 
                         className={clsx(scale === 0.06 ? 'bg-white text-black' : 'bg-transparent text-white')} 
                     >
                         <p>14"</p>
                     </div> 
                     <div 
-                        onClick={() => setColor(0.08)} 
+                        onClick={() => setScale(0.08)} 
                         className={clsx(scale === 0.08 ? 'bg-white text-black' : 'bg-transparent text-white')} 
                     >
                         <p>16"</p>
