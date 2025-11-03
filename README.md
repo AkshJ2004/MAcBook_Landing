@@ -200,6 +200,6 @@ Have questions or suggestions? Feel free to reach out!
 
 **⭐ Star this repository if you found it helpful!**
 
-Made with ❤️ and React
+Made with ❤️ by Aksh
 
 </div>
